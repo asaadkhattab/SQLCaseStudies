@@ -32,11 +32,23 @@ exploring the data, and getting acquainted with the 3 tables. */
 
 
 /* QUESTIONS 
+
+SELECT * FROM `Facilities` WHERE 1
+
 /* Q1: Some of the facilities charge a fee to members, but some do not.
 Write a SQL query to produce a list of the names of the facilities that do. */
 
 
+SELECT name, membercost
+FROM `Facilities`
+WHERE membercost > '0.00'
+LIMIT 0 , 30
+
+
 /* Q2: How many facilities do not charge a fee to members? */
+SELECT COUNT(*) AS free_membership
+FROM `Facilities`
+WHERE membercost = '0.0'
 
 
 /* Q3: Write an SQL query to show a list of facilities that charge a fee to members,
